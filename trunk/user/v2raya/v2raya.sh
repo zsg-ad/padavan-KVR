@@ -233,6 +233,12 @@ start_v2() {
   		dowload_v2 $tag
   	fi
    	if [ -z "$v2raya_v2ray" ] || [ ! -f "$v2raya_v2ray" ] ; then
+		# 优先使用本地预置的xray核心 (避免从GitHub下载被墙)
+		if [ -f "/etc/storage/bin/v2ray" ] && [ ! -f "/tmp/var/v2ray" ]; then
+			mkdir -p /tmp/var
+			cp /etc/storage/bin/v2ray /tmp/var/v2ray
+			chmod +x /tmp/var/v2ray
+		fi
     		[ -f "$v2raya_assetsdir/v2ray" ] && chmod +x "$v2raya_assetsdir/v2ray"
     		if [[ "$($v2raya_assetsdir/v2ray -h 2>&1 | wc -l)" -lt 3 ]] ; then
 			logger -t "【V2RayA】" "v2ray-core不存在，开始在线下载..."
