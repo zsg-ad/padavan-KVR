@@ -211,6 +211,14 @@ start_v2() {
 	[ "$v2raya_enable" = "1" ] || exit 1
 	logger -t "【V2RayA】" "正在启动v2raya"
 	echo "正在启动v2raya" >/tmp/v2raya.log
+	
+	# 固件内置v2raya二进制，优先复制到运行路径 (避免从GitHub下载被墙)
+	if [ -f "/usr/bin/v2raya" ] && [ ! -f "/tmp/var/v2raya" ]; then
+		mkdir -p /tmp/var
+		cp /usr/bin/v2raya /tmp/var/v2raya
+		chmod +x /tmp/var/v2raya
+	fi
+
 	sed -Ei '/【V2RayA】|^$/d' /tmp/script/_opt_script_check
 	get_tag
  	if [ -f "$v2raya" ] ; then
