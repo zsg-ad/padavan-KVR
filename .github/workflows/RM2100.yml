@@ -236,10 +236,10 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_TCPDUMP=y" >> .config
 
         ## 包含 "hdparm" 工具（允许设置硬盘节能超时时间和 APM）。约 0.1MB
-        echo "CONFIG_FIRMWARE_INCLUDE_HDPARM=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_HDPARM=n" >> .config
 
         ##包含 "parted" 工具（允许创建 GPT 分区）。约 0.3MB
-        echo "CONFIG_FIRMWARE_INCLUDE_PARTED=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_PARTED=n" >> .config
 
         ##包含 SMB（和 WINS）服务器。约 1.5MB
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD=n" >> .config
@@ -287,7 +287,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y" >> .config
 
         ##包含 xUPNPd IPTV 媒体服务器。约 0.3MB
-        echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >> .config
 
         ##包含 Minidlna UPnP 媒体服务器。约 1.6MB
         echo "CONFIG_FIRMWARE_INCLUDE_MINIDLNA=n" >> .config
@@ -296,7 +296,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_FIREFLY=n" >> .config
 
         ##为 Minidlna 和 Firefly 包含 ffmpeg 0.11.x（替代 0.6.x）。约 0.1MB
-        echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=n" >> .config
 
 
 
@@ -372,10 +372,10 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config
 
         ## DUMP1090
-        echo "CONFIG_FIRMWARE_INCLUDE_DUMP1090=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_DUMP1090=n" >> .config
 
         ## RTL_SDR
-        echo "CONFIG_FIRMWARE_INCLUDE_RTL_SDR=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_RTL_SDR=n" >> .config
 
         ## MTR
         echo "CONFIG_FIRMWARE_INCLUDE_MTR=y" >> .config
@@ -405,7 +405,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARED=y" >> .config #CF的隧道 约50k
         echo "CONFIG_FIRMWARE_INCLUDE_LUCKY=y" >> .config #LUCKY 约50k
         echo "CONFIG_FIRMWARE_INCLUDE_CLOUDFLARE=y" >> .config #CF-ddns 约50k
-        echo "CONFIG_FIRMWARE_INCLUDE_EASYTIER=y" >> .config #EasyTier 约50k
+        echo "CONFIG_FIRMWARE_INCLUDE_EASYTIER=n" >> .config #EasyTier 约50k
         
         echo "CONFIG_FIRMWARE_INCLUDE_ALIST=y" >> .config #ALIST文件列表 约80k
         echo "CONFIG_FIRMWARE_INCLUDE_WXSEND=n" >> .config #微信推送 约50k
